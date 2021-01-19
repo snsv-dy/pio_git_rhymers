@@ -8,7 +8,16 @@ class RhymersDemo {
     public static void main(String[] args) {
         Rhymersfactory factory = new DefaultRhymersFactory();
 
-        testRhymers(factory);
+//        testRhymers(factory);
+        DefaultCountingOutRhymer r = factory.getHanoiRhymer();
+
+        for(int i = 15; i >= 0; i--)
+            r.countIn(i);
+
+        while(!r.callCheck()){
+            System.out.print(", " + r.countOut());
+        }
+        System.out.println();
 
     }
 

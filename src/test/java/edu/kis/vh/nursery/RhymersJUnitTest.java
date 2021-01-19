@@ -1,7 +1,10 @@
 package edu.kis.vh.nursery;
 
+import edu.kis.vh.nursery.list.IntLinkedList;
 import org.junit.Assert;
 import org.junit.Test;
+
+import java.util.Arrays;
 
 public class RhymersJUnitTest {
 
@@ -54,8 +57,6 @@ public class RhymersJUnitTest {
 
 		result = rhymer.peekaboo();
 		Assert.assertEquals(testValue, result);
-		result = rhymer.peekaboo();
-		Assert.assertEquals(testValue, result);
 	}
 
 	@Test
@@ -75,4 +76,52 @@ public class RhymersJUnitTest {
 		Assert.assertEquals(EMPTY_STACK_VALUE, result);
 	}
 
+	@Test
+	public void testHanoi(){
+		HanoiRhymer rhymer = new HanoiRhymer();
+		final int EMPTY_STACK_VALUE = -1;
+
+		int result = rhymer.countOut();
+		Assert.assertEquals(EMPTY_STACK_VALUE, result);
+
+		int value1 = 5, value2 = 4;
+		rhymer.countIn(value1);
+		rhymer.countIn(value2);
+
+		Assert.assertEquals(value2, rhymer.countOut());
+		Assert.assertEquals(value1, rhymer.countOut());
+	}
+
+
+	@Test
+	public void testFIFO(){
+		FIFORhymer rhymer = new FIFORhymer();
+		final int EMPTY_STACK_VALUE = -1;
+
+		int result = rhymer.countOut();
+		Assert.assertEquals(EMPTY_STACK_VALUE, result);
+
+		int value1 = 5, value2 = 2;
+		rhymer.countIn(value1);
+		rhymer.countIn(value2);
+
+		Assert.assertEquals(value1, rhymer.countOut());
+		Assert.assertEquals(value2, rhymer.countOut());
+	}
+
+	@Test
+	public void listTest(){
+		IntLinkedList list = new IntLinkedList();
+		Assert.assertEquals(true, list.isEmpty());
+
+		int[] values = {1, 2, 3};
+		Arrays.stream(values).forEach(e -> list.push(e));
+
+		Assert.assertEquals(values[2], list.top());
+		Assert.assertEquals(false, list.isEmpty());
+
+		list.pop();
+		Assert.assertEquals(values[1], list.top());
+	}
 }
+
