@@ -28,7 +28,8 @@ public class DefaultCountingOutRhymer {
 	}
 
 	public DefaultCountingOutRhymer() {
-		 stack = new IntArrayStack();
+//		 stack = new IntArrayStack();
+		 stack = new ListStack();
 	}
 
 	public DefaultCountingOutRhymer(IntArrayStack stack) {
