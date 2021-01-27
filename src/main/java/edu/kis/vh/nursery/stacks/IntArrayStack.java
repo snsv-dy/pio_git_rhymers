@@ -1,6 +1,4 @@
-package edu.kis.vh.nursery.list;
-
-import edu.kis.vh.nursery.ArrayStack;
+package edu.kis.vh.nursery.stacks;
 
 public class IntArrayStack implements ArrayStack {
     @Override
@@ -22,7 +20,7 @@ public class IntArrayStack implements ArrayStack {
     }
 
     @Override
-    public boolean callCheck() {
+    public boolean isEmpty() {
         return total == INITIAL;
     }
 
@@ -32,14 +30,14 @@ public class IntArrayStack implements ArrayStack {
     }
 
     public int peekaboo() {
-        if (callCheck())
+        if (isEmpty())
             return IF_EMPTY;
         return numbers[total];
     }
 
     @Override
     public int countOut() {
-        if (callCheck())
+        if (isEmpty())
             return IF_EMPTY;
         return numbers[total--];
     }

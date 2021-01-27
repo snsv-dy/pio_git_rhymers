@@ -1,7 +1,7 @@
 package edu.kis.vh.nursery;
 
-import edu.kis.vh.nursery.list.IntArrayStack;
-import edu.kis.vh.nursery.list.IntLinkedList;
+import edu.kis.vh.nursery.stacks.IntArrayStack;
+import edu.kis.vh.nursery.stacks.IntLinkedList;
 
 public class ListStack extends IntArrayStack {
     IntLinkedList list = new IntLinkedList();
@@ -19,7 +19,7 @@ public class ListStack extends IntArrayStack {
     }
 
     @Override
-    public boolean callCheck() {
+    public boolean isEmpty() {
         return list.isEmpty();
     }
 

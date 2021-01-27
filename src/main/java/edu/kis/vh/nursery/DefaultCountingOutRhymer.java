@@ -1,6 +1,7 @@
 package edu.kis.vh.nursery;
 
-import edu.kis.vh.nursery.list.IntLinkedList;
+import edu.kis.vh.nursery.stacks.ArrayStack;
+import edu.kis.vh.nursery.stacks.IntLinkedList;
 
 public class DefaultCountingOutRhymer {
 	ArrayStack stack;
@@ -14,7 +15,7 @@ public class DefaultCountingOutRhymer {
 	}
 
 	public boolean callCheck() {
-		return stack.callCheck();
+		return stack.isEmpty();
 	}
 
 	public boolean isFull() {

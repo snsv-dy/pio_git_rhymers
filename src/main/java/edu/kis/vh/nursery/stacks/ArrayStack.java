@@ -1,11 +1,11 @@
-package edu.kis.vh.nursery;
+package edu.kis.vh.nursery.stacks;
 
 public interface ArrayStack {
     int getTotal();
 
     void countIn(int in);
 
-    boolean callCheck();
+    boolean isEmpty();
 
     boolean isFull();
 

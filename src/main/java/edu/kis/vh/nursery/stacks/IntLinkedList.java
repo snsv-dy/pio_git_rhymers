@@ -1,6 +1,4 @@
-package edu.kis.vh.nursery.list;
-
-import edu.kis.vh.nursery.ArrayStack;
+package edu.kis.vh.nursery.stacks;
 
 class Node {
 
@@ -43,6 +41,7 @@ public class IntLinkedList implements ArrayStack {
 	 * Sprawdza czy lista jest pusta.
 	 * @return wartość logiczna testu.
 	 */
+	@Override
 	public boolean isEmpty() {
 		return last == null;
 	}
@@ -56,11 +55,6 @@ public class IntLinkedList implements ArrayStack {
 	public void countIn(int in) {
 		this.push(in);
 		total++;
-	}
-
-	@Override
-	public boolean callCheck() {
-		return this.isEmpty();
 	}
 
 	/**
