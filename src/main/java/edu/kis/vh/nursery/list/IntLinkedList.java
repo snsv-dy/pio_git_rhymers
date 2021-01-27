@@ -1,5 +1,7 @@
 package edu.kis.vh.nursery.list;
 
+import edu.kis.vh.nursery.ArrayStack;
+
 class Node {
 
 	public final int value;
@@ -14,11 +16,12 @@ class Node {
 /**
  * Prosta lista z dowiązaniami. Operująca na typach int.
  */
-public class IntLinkedList {
+public class IntLinkedList implements ArrayStack {
 
 
-	private Node last;
+	private Node last = null;
 	private int i;
+	private int total = 0;
 	public static final int IF_EMPTY = -1;
 
 
@@ -44,12 +47,40 @@ public class IntLinkedList {
 		return last == null;
 	}
 
+	@Override
+	public int getTotal() {
+		return total;
+	}
+
+	@Override
+	public void countIn(int in) {
+		this.push(in);
+		total++;
+	}
+
+	@Override
+	public boolean callCheck() {
+		return this.isEmpty();
+	}
+
 	/**
 	 * Sprawdza czy lista jest pełna.
 	 * @return wartość logiczna testu
 	 */
 	public boolean isFull() {
 		return false;
+	}
+
+	@Override
+	public int countOut() {
+		int out = this.pop();
+		total--;
+		return out;
+	}
+
+	@Override
+	public int peekaboo() {
+		return this.top();
 	}
 
 	/**

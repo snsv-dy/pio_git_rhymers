@@ -1,6 +1,9 @@
-package edu.kis.vh.nursery;
+package edu.kis.vh.nursery.list;
 
-public class IntArrayStack {
+import edu.kis.vh.nursery.ArrayStack;
+
+public class IntArrayStack implements ArrayStack {
+    @Override
     public int getTotal() {
         return total;
     }
@@ -11,26 +14,30 @@ public class IntArrayStack {
     private final int[] numbers = new int[CAPACITY];
     private int total = INITIAL;
 
+    @Override
     public void countIn(int in) {
 
         if (!isFull())
             numbers[++total] = in;
     }
 
+    @Override
     public boolean callCheck() {
         return total == INITIAL;
     }
 
+    @Override
     public boolean isFull() {
         return total == CAPACITY-1;
     }
 
-    protected int peekaboo() {
+    public int peekaboo() {
         if (callCheck())
             return IF_EMPTY;
         return numbers[total];
     }
 
+    @Override
     public int countOut() {
         if (callCheck())
             return IF_EMPTY;

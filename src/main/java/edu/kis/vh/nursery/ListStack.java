@@ -1,8 +1,9 @@
 package edu.kis.vh.nursery;
 
+import edu.kis.vh.nursery.list.IntArrayStack;
 import edu.kis.vh.nursery.list.IntLinkedList;
 
-public class ListStack extends IntArrayStack{
+public class ListStack extends IntArrayStack {
     IntLinkedList list = new IntLinkedList();
     int total = 0;
 
@@ -28,7 +29,7 @@ public class ListStack extends IntArrayStack{
     }
 
     @Override
-    protected int peekaboo() {
+    public int peekaboo() {
         return list.top();
     }
 
